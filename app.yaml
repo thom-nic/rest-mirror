@@ -1,0 +1,29 @@
+application: restmirror
+version: a
+runtime: python
+api_version: 1
+
+handlers:
+
+#- url: /style.css
+#  static_files: style.css
+#  upload: style.css
+
+#- url: /images
+#  static_dir: images
+
+#- url: /robots\.txt
+#  static_files: robots.txt
+#  upload: robots.txt
+
+- url: .*
+  script: main.py
+
+skip_files: |
+ ^(.*/)?(
+ (app\.ya?ml)|
+ (index\.ya?ml)|
+ (#.*#)|
+ (.*~)|
+ (.*\.py[co])
+ )$
